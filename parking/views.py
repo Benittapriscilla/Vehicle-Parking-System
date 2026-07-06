@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import ParkingSerializer
-
+# Temporary change for Git practice
 
 def index(request):
     parking = Parking.objects.all()
