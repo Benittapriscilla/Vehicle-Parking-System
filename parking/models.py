@@ -1,5 +1,5 @@
 from django.db import models
-# Second Git practice change
+
 # Create your models here.
 class Parking(models.Model):
     STATUS_CHOICES = [
