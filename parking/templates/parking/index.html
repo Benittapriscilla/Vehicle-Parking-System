@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+<h2>Vehicle Parking Details</h2>
+
+<a href="/add/">Add Parking</a>
+
+<table border="1"
+       cellpadding="8">
+
+    <tr>
+        <th>ID</th>
+        <th>Vehicle Type</th>
+        <th>Vehicle Number</th>
+        <th>Owner</th>
+        <th>Hours</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for p in parking %}
+
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.vehicle_type }}</td>
+        <td>{{ p.vehicle_number }}</td>
+        <td>{{ p.owner_name }}</td>
+        <td>{{ p.parked_hours }}</td>
+        <td>{{ p.paid_amount }}</td>
+        <td>{{ p.status }}</td>
+
+        <td>
+            <a href="/edit/{{ p.id }}/">Edit</a>
+            <a href="/delete/{{ p.id }}/">Delete</a>
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+
+</body>
+</html>
